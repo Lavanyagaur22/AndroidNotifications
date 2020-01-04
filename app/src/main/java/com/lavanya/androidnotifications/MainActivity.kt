@@ -41,12 +41,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSimple.setOnClickListener {
+            //Create a simple notification, first - > Channel ID
             val simpleNotification = NotificationCompat.Builder(this, "first")
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle("Hello There")
                 .setContentText("General Master!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT).build()
 
+            //Show the notification
             nm.notify(System.currentTimeMillis().toInt(), simpleNotification)
         }
 
@@ -63,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                 .setContentTitle("Hello There")
                 .setContentText("General Master!")
                 .setContentIntent(pi)
+                .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT).build()
 
             nm.notify(2, clickableNotification)
