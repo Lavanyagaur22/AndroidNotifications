@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-
         btnSimple.setOnClickListener {
             val simpleNotification = NotificationCompat.Builder(this, "first")
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
